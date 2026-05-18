@@ -1,0 +1,45 @@
+// src/components/custom/CustomMenu.tsx
+
+import { Link, useLocation } from 'react-router'
+
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from '../ui/navigation-menu'
+import { cn } from '@/lib/utils';
+
+export const CustomMenu = () => {
+
+    const { pathname } = useLocation();
+
+    const isActive = (path: string) => {
+        return pathname === path;
+    }
+
+    return (
+        <NavigationMenu>
+            <NavigationMenuList className='-mt-6 mb-3 gap-2'>
+                {/* Home */}
+                <NavigationMenuItem>
+                    <NavigationMenuLink
+                        asChild
+                        className={cn(
+                            isActive('/') ? 'focus:bg-slate-300' : 'bg-slate-200',
+                            'p-2 rounded-t-none font-semibold text-slate-800'
+                        )}>
+                        <Link to="/">Inicio</Link>
+                    </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                {/* Search */}
+                <NavigationMenuItem>
+                    <NavigationMenuLink
+                        asChild
+                        className={cn(
+                            isActive('/search') ? 'focus:bg-slate-300' : 'bg-slate-200',
+                            'p-2 rounded-t-none font-semibold text-slate-800'
+                        )}>
+                        <Link to="/search">Buscar superhéroes</Link>
+                    </NavigationMenuLink>
+                </NavigationMenuItem>
+            </NavigationMenuList>
+        </NavigationMenu>
+    )
+}
