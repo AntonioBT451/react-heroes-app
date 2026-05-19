@@ -67,10 +67,10 @@ Then edit .env with your API URL.
 
 | Path | Page |	Description |
 |--|--|--|
-| HomePage | Main | dashboard with hero grid |
-| /search | SearchPage | Search and filter heroes |
-| /hero/:id | HeroPage | Hero details (coming soon) |
-| /admin | AdminPage | Admin panel (lazy loaded) |
+| `/` | HomePage | Main dashboard with hero grid |
+| `/search` | SearchPage | Search and filter heroes |
+| `/hero/:id` | HeroPage | Hero details (coming soon) |
+| `/admin` | AdminPage | Admin panel (lazy loaded) |
 
 ## Commit Convention
 
