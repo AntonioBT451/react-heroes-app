@@ -54,7 +54,7 @@ Then edit .env with your API URL.
 
 4. **Start the development server**
 
-### Available Scripts
+## Available Scripts
 
 | Command  | Description |
 |--|--|
@@ -63,7 +63,7 @@ Then edit .env with your API URL.
 | `npm run preview` | Preview production build |
 | `npm run lint` | Run ESLint |
 
-### Routes
+## Routes
 
 | Path | Page |	Description |
 |--|--|--|
@@ -72,7 +72,7 @@ Then edit .env with your API URL.
 | /hero/:id | HeroPage | Hero details (coming soon) |
 | /admin | AdminPage | Admin panel (lazy loaded) |
 
-### Commit Convention
+## Commit Convention
 
 This project follows Conventional Commits:
 
@@ -85,7 +85,7 @@ This project follows Conventional Commits:
 - `test:` - Adding tests
 - `chore:` - Maintenance tasks
 
-### Contributing
+## Contributing
 1. Fork the project.
 2. Create your feature branch (`git checkout -b feat/amazing-feature`).
 3. Commit your changes (`git commit -m 'feat: add amazing feature'`).
