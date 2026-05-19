@@ -1,75 +1,93 @@
-# React + TypeScript + Vite
+# Heroes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for managing and exploring superheroes and villains, built with React, TypeScript, and cutting-edge frontend technologies.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **React Router v7** - Client-side routing
+- **TailwindCSS v4** - Utility-first CSS framework
+- **shadcn/ui** - High-quality UI components
+- **Axios** - HTTP client
+- **Lucide React** - Icon library
 
-## React Compiler
+## Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Search heroes** - Find characters by name, powers, or teams
+- **Interactive dashboard** - View statistics and metrics
+- **Smart filtering** - Filter by category, universe, team, and status
+- **Favorites system** - Save and manage favorite characters
+- **Responsive design** - Works on desktop, tablet, and mobile
+- **Code splitting** - Lazy loading for optimal performance
+- **Modern UI** - Beautiful gradients, animations, and cards
 
-Note: This will impact Vite dev & build performances.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (v18 or higher)
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Steps
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Clone the repository**
+```bash
+    git clone https://github.com/YOUR-USERNAME/05-heroes-app.git
+
+    cd 05-heroes-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Install dependencies**
 ```
+    npm install
+```
+
+3. **Set up environment variables**
+```
+    cp .env.template .env
+```
+
+Then edit .env with your API URL.
+
+4. **Start the development server**
+
+### Available Scripts
+
+| Command  | Description |
+|--|--|
+| `npm run dev` | Start development server |
+|`npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+
+### Routes
+
+| Path | Page |	Description |
+|--|--|--|
+| HomePage | Main | dashboard with hero grid |
+| /search | SearchPage | Search and filter heroes |
+| /hero/:id | HeroPage | Hero details (coming soon) |
+| /admin | AdminPage | Admin panel (lazy loaded) |
+
+### Commit Convention
+
+This project follows Conventional Commits:
+
+- `feat:` - New feature
+- `fix:` - Bug fix
+- `docs:` - Documentation
+- `style:` - Code style changes
+- `refactor:` - Code refactoring
+- `perf:` - Performance improvements
+- `test:` - Adding tests
+- `chore:` - Maintenance tasks
+
+### Contributing
+1. Fork the project.
+2. Create your feature branch (`git checkout -b feat/amazing-feature`).
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`).
+4. Push to the branch (`git push origin feat/amazing-feature`).
+5. Open a Pull Request.
