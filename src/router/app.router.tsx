@@ -1,12 +1,13 @@
 // src/router/app.router.tsx
 
 import { lazy } from "react";
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 
+import { AdminLayout } from "@/admin/layouts/AdminLayout";
+import { HeroesLayout } from "@/heroes/layouts/HeroesLayout";
+import { HeroPage } from "@/heroes/pages/hero/HeroPage";
 import { HomePage } from "@/heroes/pages/home/HomePage";
 import { SearchPage } from "@/heroes/pages/search/SearchPage";
-import { HeroesLayout } from "@/heroes/layouts/HeroesLayout";
-import { AdminLayout } from "@/admin/layouts/AdminLayout";
 
 // Importación Estática (Carga inmediata)
 // import { AdminPage } from "@/admin/pages/AdminPage";
@@ -24,13 +25,17 @@ export const appRouter = createBrowserRouter([
                 element: <HomePage />
             },
             {
-                path: 'hero/1',
-                element: <HomePage />
+                path: 'heroes/:idSlug',
+                element: <HeroPage />
             },
             {
                 path: 'search',
                 element: <SearchPage />
             },
+            {
+                path: '*',
+                element: <Navigate to={"/"} />
+            }
         ]
     },
     {
